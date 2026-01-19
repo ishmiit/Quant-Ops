@@ -20,12 +20,10 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install yfinance pandas requests beautifulsoup4 apscheduler fastapi uvicorn gunicorn click
+          pip install yfinance pandas requests beautifulsoup4 apscheduler fastapi uvicorn gunicorn click lxml
 
       - name: Run Audit
         run: |
-          # If your main.py is inside a 'backend' folder, keep the next line. 
-          # If it is in the main folder, delete 'cd backend'.
           cd backend
           python main.py
 
@@ -33,6 +31,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Automated audit update" || exit 0
+          git add backend/*.json
+          git commit -m "Automated daily audit update" || exit 0
           git push
