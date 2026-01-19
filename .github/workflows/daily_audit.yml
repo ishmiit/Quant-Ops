@@ -1,3 +1,4 @@
+ HEAD
 name: Daily Stock Audit
 on:
   schedule:
@@ -33,3 +34,11 @@ jobs:
           git add backend/*.json
           git commit -m "Automated daily audit update" || exit 0
           git push
+=======
+on:
+  push:
+    branches: [ main ]  # Add this temporarily
+  schedule:
+    - cron: '30 2 * * *'
+  workflow_dispatch:
+ 9a5285f (properly added github actions folder)
