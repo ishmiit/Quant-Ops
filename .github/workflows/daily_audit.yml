@@ -24,6 +24,8 @@ jobs:
 
       - name: Run Audit
         run: |
+          # If your main.py is inside a 'backend' folder, keep the next line. 
+          # If it is in the main folder, delete 'cd backend'.
           cd backend
           python main.py
 
@@ -31,6 +33,6 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add backend/*.json
+          git add .
           git commit -m "Automated audit update" || exit 0
           git push
