@@ -78,7 +78,7 @@ async def run_daily_bulk_audit():
         # This gets the official list of all stocks on the NSE
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
-        tickers = df['SYMBOL'].head(50).tolist() # Start with top 50 to test speed
+        tickers = df['SYMBOL'].tolist() # Start with top 50 to test speed
     except:
         tickers = ["RELIANCE", "TCS", "INFY", "HDFCBANK"] # Fallback
     
