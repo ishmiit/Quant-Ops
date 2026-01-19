@@ -1,0 +1,35 @@
+name: Daily Stock Audit
+on:
+  schedule:
+    - cron: '30 2 * * *' # 8:00 AM IST (UTC is 5.5 hours behind IST)
+  workflow_dispatch:      # This adds a "Run" button so you can test it manually
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          pip install -r requirements.txt
+
+      - name: Run Audit
+        run: |
+          cd backend
+          python main.py
+
+      - name: Commit and Push JSON
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add backend/*.json
+          git commit -m "Automated daily audit update" || exit 0
+          git push
