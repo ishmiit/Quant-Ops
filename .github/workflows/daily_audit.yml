@@ -1,9 +1,9 @@
- HEAD
 name: Daily Stock Audit
+
 on:
   schedule:
-    - cron: '30 2 * * *' # 8:00 AM IST (UTC is 5.5 hours behind IST)
-  workflow_dispatch:      # This adds a "Run" button so you can test it manually
+    - cron: '30 2 * * *'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -29,16 +29,8 @@ jobs:
 
       - name: Commit and Push JSON
         run: |
-          git config --global user.name "GitHub Action"
-          git config --global user.email "action@github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add backend/*.json
           git commit -m "Automated daily audit update" || exit 0
           git push
-=======
-on:
-  push:
-    branches: [ main ]  # Add this temporarily
-  schedule:
-    - cron: '30 2 * * *'
-  workflow_dispatch:
- 9a5285f (properly added github actions folder)
