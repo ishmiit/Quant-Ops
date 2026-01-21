@@ -11,9 +11,18 @@ export default function AlphaTerminalV10() {
     if (!ticker) return;
     setLoading(true);
     try {
-      const res = await fetch(`http://127.0.0.1:8000/api/audit/${ticker}`);
-      const result = await res.json();
-      setData(result);
+      // UPDATED URL: Pointing to your automated GitHub JSON storage
+      const res = await fetch(`https://raw.githubusercontent.com/ishmiit/Quant-Ops/main/backend/daily_audit_results.json`);
+      const allResults = await res.json();
+      
+      // Finding the specific ticker in the bulk audit list
+      const result = allResults.find((item: any) => item.ticker === ticker.toUpperCase());
+
+      if (result) {
+        setData(result);
+      } else {
+        alert("Ticker not found in daily audit results.");
+      }
     } catch (err) { alert("API BRIDGE OFFLINE"); }
     setLoading(false);
   };
@@ -90,9 +99,6 @@ export default function AlphaTerminalV10() {
               <h4 className="text-4xl font-black italic uppercase tracking-tighter mb-4">{data.verdict}</h4>
               <p className="text-xs font-bold text-zinc-250 px-6 leading-relaxed uppercase">{data.advice}</p>
             </div>
-
-            
-
           </div>
         )}
       </div>
