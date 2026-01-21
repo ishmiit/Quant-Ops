@@ -64,11 +64,11 @@ async def get_audit(ticker: str):
         mos = ((graham_no - price) / graham_no) * 100 if graham_no > 0 else -100
 
         if f_score >= 7:
-            verdict, advice = ("PRIME_VALUE", "RARE BARGAIN: High safety & low price.") if mos > 10 else ("QUALITY_GROWTH", "EXPENSIVE LEADER: Elite health.")
+            verdict, advice = ("PRIME VALUE", "RARE BARGAIN: High safety & low price.") if mos > 10 else ("QUALITY_GROWTH", "EXPENSIVE LEADER: Elite health.")
         elif f_score <= 3:
-            verdict, advice = "RISK_TRAP", "DANGER: Failing financials."
+            verdict, advice = "RISK TRAP", "DANGER: Failing financials."
         else:
-            verdict, advice = "NEUTRAL_HOLD", "AVERAGE: No clear edge."
+            verdict, advice = "NEUTRAL HOLD", "AVERAGE: No clear edge."
 
         # --- UPDATED RETURN OBJECT FOR V10 ---
         return {
@@ -96,39 +96,52 @@ async def get_audit(ticker: str):
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
+import os
+import json
+import time
+
 async def run_daily_bulk_audit():
     print("Fetching live NSE ticker list...")
     try:
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
-        tickers = df['SYMBOL'].tolist() 
+        # Sort so we can track progress alphabetically
+        tickers = sorted(df['SYMBOL'].dropna().unique().tolist())
     except:
-        tickers = ["RELIANCE", "TCS", "INFY", "HDFCBANK"]
+        tickers = ["RELIANCE", "TCS", "INFY"]
+
+    filename = "daily_audit_results.json"
     
-    final_results = []
-    
-    # Process in batches or with a delay to avoid being blocked
+    # 1. Start the file with an open bracket
+    with open(filename, "w") as f:
+        f.write("[")
+
+    first_entry = True
     for i, t in enumerate(tickers):
         try:
-            print(f"[{i+1}/{len(tickers)}] Auditing {t}...")
             res = await get_audit(t)
-            
             if res["status"] == "success":
-                final_results.append(res)
-            
-            # Every 50 stocks, take a 2-second breath
-            if i % 50 == 0 and i > 0:
-                time.sleep(2)
+                # 2. Append the stock data immediately
+                with open(filename, "a") as f:
+                    if not first_entry:
+                        f.write(",")
+                    json.dump(res, f, separators=(',', ':'))
                 
+                print(f"[{i+1}/{len(tickers)}] SAVED: {t}")
+                first_entry = False
+            
+            # Rate limiting to stay under Yahoo's radar
+            if i % 10 == 0: time.sleep(1)
+
         except Exception as e:
-            print(f"Skipping {t} due to error: {e}")
+            print(f"Error on {t}: {e}")
             continue
 
-    # SAVE AS MINIFIED (Important for GitHub display and speed)
-    with open("daily_audit_results.json", "w") as f:
-        json.dump(final_results, f, separators=(',', ':'))
-        
-    print(f"Daily Audit Complete. Processed {len(final_results)} stocks.")
+    # 3. Close the JSON array
+    with open(filename, "a") as f:
+        f.write("]")
+    
+    print("Full audit complete. File finalized.")
 
 if __name__ == "__main__":
     if os.getenv("GITHUB_ACTIONS") == "true":
