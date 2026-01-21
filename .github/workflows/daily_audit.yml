@@ -1,8 +1,11 @@
 name: Daily Stock Audit
+
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 2 * * *'
+    # This runs every 4 hours (00:00, 04:00, 08:00, 12:00, 16:00, 20:00)
+    # The first run of the day will start fresh, others will resume.
+    - cron: '0 */4 * * *'
 
 jobs:
   build:
@@ -11,7 +14,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 # Essential for the bot to "see" previous progress
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,9 +28,12 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull origin main --rebase # Pull BEFORE the audit starts
+          # Sync with the repo to get the latest daily_audit_results.json
+          git pull origin main --rebase 
 
       - name: Run Audit
+        # We allow the audit to fail/timeout without stopping the whole workflow
+        continue-on-error: true 
         run: |
           cd backend
           python main.py
@@ -35,5 +41,6 @@ jobs:
       - name: Commit and Push
         run: |
           git add backend/daily_audit_results.json
-          git commit -m "Automated daily audit update" || exit 0
+          # If no changes (market closed/all done), it exits gracefully
+          git commit -m "Automated daily audit update [skip ci]" || exit 0
           git push origin main

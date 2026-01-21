@@ -92,33 +92,58 @@ async def get_audit(ticker: str):
         return {"status": "error", "message": str(e)}
 
 async def run_daily_bulk_audit():
-    print("🚀 Starting High-Speed Audit...")
+    filename = "daily_audit_results.json"
+    print("🚀 Starting Smart-Resume Audit...")
+    
+    # --- LOAD EXISTING OR RESET ---
+    existing_data = []
+    if os.path.exists(filename):
+        try:
+            # If file is older than 20 hours, it's a new day: start fresh
+            file_age_hours = (time.time() - os.path.getmtime(filename)) / 3600
+            if file_age_hours > 20:
+                print("🕒 File is old. Starting a fresh daily cycle...")
+                existing_data = []
+            else:
+                with open(filename, "r") as f:
+                    existing_data = json.load(f)
+                print(f"📈 Resuming: {len(existing_data)} stocks already done.")
+        except Exception as e:
+            print(f"Error loading file: {e}. Starting fresh.")
+            existing_data = []
+    
+    completed_tickers = {item['ticker'] for item in existing_data}
+
+    # --- GET TICKER LIST ---
     try:
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
-        tickers = sorted(df['SYMBOL'].dropna().unique().tolist())
+        all_tickers = sorted(df['SYMBOL'].dropna().unique().tolist())
     except:
-        tickers = ["RELIANCE", "TCS"]
+        all_tickers = ["RELIANCE", "TCS"]
 
-    final_results = []
+    final_results = existing_data
     
-    # Run at full speed
-    for i, t in enumerate(tickers):
-        try:
-            res = await get_audit(t)
-            if res["status"] == "success":
-                final_results.append(res)
+    # --- RUN AUDIT LOOP ---
+    try:
+        for i, t in enumerate(all_tickers):
+            if t in completed_tickers:
+                continue
             
-            if i % 100 == 0:
-                print(f"✅ Processed {i}/{len(tickers)}...")
-        except:
-            continue # Skip errors and keep moving fast
-
-    # Final Save only
-    with open("daily_audit_results.json", "w") as f:
-        json.dump(final_results, f, indent=2)
-    
-    print(f"🏁 Done! Saved {len(final_results)} stocks.")
+            try:
+                res = await get_audit(t)
+                if res["status"] == "success":
+                    final_results.append(res)
+                
+                if len(final_results) % 100 == 0:
+                    print(f"✅ Total Progress: {len(final_results)}/{len(all_tickers)}")
+            except:
+                continue
+    finally:
+        # --- SAVE REGARDLESS OF CRASH/TIMEOUT ---
+        with open(filename, "w") as f:
+            json.dump(final_results, f, indent=2)
+        print(f"🏁 Saved {len(final_results)} stocks total.")
 
 if __name__ == "__main__":
     if os.getenv("GITHUB_ACTIONS") == "true":
