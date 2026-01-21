@@ -6,6 +6,7 @@ import os
 import json
 import asyncio
 import pandas as pd
+import time
 
 app = FastAPI()
 
@@ -100,20 +101,34 @@ async def run_daily_bulk_audit():
     try:
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
-        tickers = df['SYMBOL'].tolist() # Limit to 100 for safety
+        tickers = df['SYMBOL'].tolist() 
     except:
         tickers = ["RELIANCE", "TCS", "INFY", "HDFCBANK"]
     
     final_results = []
-    for t in tickers:
-        print(f"Auditing {t}...")
-        res = await get_audit(t)
-        if res["status"] == "success":
-            final_results.append(res)
+    
+    # Process in batches or with a delay to avoid being blocked
+    for i, t in enumerate(tickers):
+        try:
+            print(f"[{i+1}/{len(tickers)}] Auditing {t}...")
+            res = await get_audit(t)
             
+            if res["status"] == "success":
+                final_results.append(res)
+            
+            # Every 50 stocks, take a 2-second breath
+            if i % 50 == 0 and i > 0:
+                time.sleep(2)
+                
+        except Exception as e:
+            print(f"Skipping {t} due to error: {e}")
+            continue
+
+    # SAVE AS MINIFIED (Important for GitHub display and speed)
     with open("daily_audit_results.json", "w") as f:
-        json.dump(final_results, f, indent=4)
-    print("Daily Audit Complete.")
+        json.dump(final_results, f, separators=(',', ':'))
+        
+    print(f"Daily Audit Complete. Processed {len(final_results)} stocks.")
 
 if __name__ == "__main__":
     if os.getenv("GITHUB_ACTIONS") == "true":
