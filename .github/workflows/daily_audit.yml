@@ -34,10 +34,17 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add backend/*.json
           
-          # FIX: Sync with any changes made while the audit was running
+          # 1. Temporarily hide the new audit file
+          git stash 
+          
+          # 2. Pull the latest code (your UI changes)
           git pull origin main --rebase
           
+          # 3. Bring the audit file back
+          git stash pop || echo "No stash to pop"
+          
+          # 4. Now commit and push
+          git add backend/*.json
           git commit -m "Automated daily audit update" || exit 0
           git push

@@ -12,7 +12,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"], # Updated for easier deployment
+    allow_origins=["*"], 
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -25,19 +25,16 @@ async def get_audit(ticker: str):
         
         stock = yf.Ticker(yf_ticker)
         info = stock.info
-        hist = stock.history(period="1mo") # Needed for Pivot Points
+        hist = stock.history(period="1mo") 
         
         price = info.get("currentPrice", 0)
         
-        # --- NEW DATA FOR V10 UI ---
         sector = info.get("sector", "Unknown")
         volume = info.get("volume", 0)
         mcap = info.get("marketCap", 0)
         pe = info.get("trailingPE", 0)
-        # Simplified Sector PE (often not available directly via YF)
         sec_pe = info.get("forwardPE", pe * 1.1) 
 
-        # --- BASIC PIVOT POINT LOGIC (For Trade Zones) ---
         high = hist['High'].max()
         low = hist['Low'].min()
         close = hist['Close'].iloc[-1]
@@ -46,7 +43,6 @@ async def get_audit(ticker: str):
         res1 = (2 * pivot) - low
         sup1 = (2 * pivot) - high
 
-        # --- YOUR ORIGINAL SCORING LOGIC ---
         f_score = 0
         if info.get("trailingEps", 0) > 0: f_score += 1
         if info.get("returnOnAssets", 0) > 0: f_score += 1
@@ -70,7 +66,6 @@ async def get_audit(ticker: str):
         else:
             verdict, advice = "NEUTRAL HOLD", "AVERAGE: No clear edge."
 
-        # --- UPDATED RETURN OBJECT FOR V10 ---
         return {
             "status": "success",
             "ticker": symbol,
@@ -89,49 +84,51 @@ async def get_audit(ticker: str):
             "short_res": round(res1, 2),
             "short_piv": round(pivot, 2),
             "short_sup": round(sup1, 2),
-            "long_res": round(res1 * 1.05, 2), # Simplified projections
+            "long_res": round(res1 * 1.05, 2),
             "long_piv": round(pivot * 1.02, 2),
             "long_sup": round(sup1 * 0.98, 2)
         }
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
-import os
-import json
-import time
-
 async def run_daily_bulk_audit():
     print("Fetching live NSE ticker list...")
     try:
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
-        # Sort so we can track progress alphabetically
         tickers = sorted(df['SYMBOL'].dropna().unique().tolist())
     except:
         tickers = ["RELIANCE", "TCS", "INFY"]
 
     filename = "daily_audit_results.json"
     
-    # 1. Start the file with an open bracket
+    # 1. Initialize file with an open bracket and a newline
     with open(filename, "w") as f:
-        f.write("[")
+        f.write("[\n")
 
     first_entry = True
+    successful_count = 0
+
     for i, t in enumerate(tickers):
         try:
             res = await get_audit(t)
             if res["status"] == "success":
-                # 2. Append the stock data immediately
                 with open(filename, "a") as f:
                     if not first_entry:
                         f.write(",")
+                    
+                    # Minify individual records
                     json.dump(res, f, separators=(',', ':'))
+                    
+                    # 2. Add a newline every 10 records to keep file readable and Git-friendly
+                    successful_count += 1
+                    if successful_count % 10 == 0:
+                        f.write("\n")
                 
                 print(f"[{i+1}/{len(tickers)}] SAVED: {t}")
                 first_entry = False
             
-            # Rate limiting to stay under Yahoo's radar
-            if i % 10 == 0: time.sleep(1)
+            if i % 12 == 0: time.sleep(1) # Slight adjustment for rate limiting
 
         except Exception as e:
             print(f"Error on {t}: {e}")
@@ -139,9 +136,9 @@ async def run_daily_bulk_audit():
 
     # 3. Close the JSON array
     with open(filename, "a") as f:
-        f.write("]")
+        f.write("\n]")
     
-    print("Full audit complete. File finalized.")
+    print(f"Full audit complete. {successful_count} stocks saved.")
 
 if __name__ == "__main__":
     if os.getenv("GITHUB_ACTIONS") == "true":
