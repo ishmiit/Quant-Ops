@@ -100,7 +100,7 @@ async def run_daily_bulk_audit():
     try:
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
-        tickers = df['SYMBOL'].head(100).tolist() # Limit to 100 for safety
+        tickers = df['SYMBOL'].tolist() # Limit to 100 for safety
     except:
         tickers = ["RELIANCE", "TCS", "INFY", "HDFCBANK"]
     
