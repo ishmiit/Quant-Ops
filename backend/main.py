@@ -96,49 +96,39 @@ async def run_daily_bulk_audit():
     try:
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
+        # Sort so RELIANCE and others are consistently placed
         tickers = sorted(df['SYMBOL'].dropna().unique().tolist())
     except:
         tickers = ["RELIANCE", "TCS", "INFY"]
 
-    filename = "daily_audit_results.json"
+    final_results = []
     
-    # 1. Initialize file with an open bracket and a newline
-    with open(filename, "w") as f:
-        f.write("[\n")
-
-    first_entry = True
-    successful_count = 0
-
     for i, t in enumerate(tickers):
         try:
             res = await get_audit(t)
             if res["status"] == "success":
-                with open(filename, "a") as f:
-                    if not first_entry:
-                        f.write(",")
-                    
-                    # Minify individual records
-                    json.dump(res, f, separators=(',', ':'))
-                    
-                    # 2. Add a newline every 10 records to keep file readable and Git-friendly
-                    successful_count += 1
-                    if successful_count % 10 == 0:
-                        f.write("\n")
-                
-                print(f"[{i+1}/{len(tickers)}] SAVED: {t}")
-                first_entry = False
+                final_results.append(res)
+                # Simple log to track progress in GitHub Actions
+                if i % 50 == 0:
+                    print(f"Progress: {i}/{len(tickers)} stocks audited...")
             
-            if i % 12 == 0: time.sleep(1) # Slight adjustment for rate limiting
+            # Tiny delay to prevent Yahoo Finance from blocking the IP
+            if i % 20 == 0:
+                time.sleep(1)
 
         except Exception as e:
             print(f"Error on {t}: {e}")
             continue
 
-    # 3. Close the JSON array
-    with open(filename, "a") as f:
-        f.write("\n]")
+    # --- THE FINAL SAVE ---
+    # Saving at the end ensures Git doesn't see "uncommitted changes" during the loop
+    filename = "daily_audit_results.json"
+    with open(filename, "w") as f:
+        # indent=2 makes it readable (not one giant line) 
+        # but compact (not 50,000 lines)
+        json.dump(final_results, f, indent=2)
     
-    print(f"Full audit complete. {successful_count} stocks saved.")
+    print(f"Audit complete. Saved {len(final_results)} stocks to {filename}")
 
 if __name__ == "__main__":
     if os.getenv("GITHUB_ACTIONS") == "true":

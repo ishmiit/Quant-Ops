@@ -35,16 +35,10 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           
-          # 1. Temporarily hide the new audit file
-          git stash 
-          
-          # 2. Pull the latest code (your UI changes)
+          # Pull first to get any UI changes you pushed
           git pull origin main --rebase
           
-          # 3. Bring the audit file back
-          git stash pop || echo "No stash to pop"
-          
-          # 4. Now commit and push
-          git add backend/*.json
+          # Now add the newly created file
+          git add backend/daily_audit_results.json
           git commit -m "Automated daily audit update" || exit 0
-          git push
+          git push origin main
