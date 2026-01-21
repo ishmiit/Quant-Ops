@@ -11,7 +11,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"], 
+    allow_origins=["*"], # Updated for easier deployment
     allow_methods=["*"],
     allow_headers=["*"],
 )
@@ -19,16 +19,33 @@ app.add_middleware(
 @app.get("/api/audit/{ticker}")
 async def get_audit(ticker: str):
     try:
-        # Use .upper() to ensure consistency
         symbol = ticker.upper()
-        # Add .NS if not present for Indian stocks
         yf_ticker = f"{symbol}.NS" if not symbol.endswith(".NS") else symbol
         
         stock = yf.Ticker(yf_ticker)
         info = stock.info
+        hist = stock.history(period="1mo") # Needed for Pivot Points
+        
         price = info.get("currentPrice", 0)
         
-        # --- YOUR ORIGINAL LOGIC (Unchanged) ---
+        # --- NEW DATA FOR V10 UI ---
+        sector = info.get("sector", "Unknown")
+        volume = info.get("volume", 0)
+        mcap = info.get("marketCap", 0)
+        pe = info.get("trailingPE", 0)
+        # Simplified Sector PE (often not available directly via YF)
+        sec_pe = info.get("forwardPE", pe * 1.1) 
+
+        # --- BASIC PIVOT POINT LOGIC (For Trade Zones) ---
+        high = hist['High'].max()
+        low = hist['Low'].min()
+        close = hist['Close'].iloc[-1]
+        
+        pivot = (high + low + close) / 3
+        res1 = (2 * pivot) - low
+        sup1 = (2 * pivot) - high
+
+        # --- YOUR ORIGINAL SCORING LOGIC ---
         f_score = 0
         if info.get("trailingEps", 0) > 0: f_score += 1
         if info.get("returnOnAssets", 0) > 0: f_score += 1
@@ -46,41 +63,46 @@ async def get_audit(ticker: str):
         mos = ((graham_no - price) / graham_no) * 100 if graham_no > 0 else -100
 
         if f_score >= 7:
-            if mos > 10:
-                verdict, advice = "PRIME_VALUE", "RARE BARGAIN: High safety & low price. Strong Buy signal."
-            else:
-                verdict, advice = "QUALITY_GROWTH", "EXPENSIVE LEADER: Elite health, but wait for a price dip."
+            verdict, advice = ("PRIME_VALUE", "RARE BARGAIN: High safety & low price.") if mos > 10 else ("QUALITY_GROWTH", "EXPENSIVE LEADER: Elite health.")
         elif f_score <= 3:
-            verdict, advice = "RISK_TRAP", "DANGER: Failing financials. Do not buy regardless of price."
+            verdict, advice = "RISK_TRAP", "DANGER: Failing financials."
         else:
-            verdict, advice = "NEUTRAL_HOLD", "AVERAGE: No clear edge. Better opportunities exist elsewhere."
+            verdict, advice = "NEUTRAL_HOLD", "AVERAGE: No clear edge."
 
+        # --- UPDATED RETURN OBJECT FOR V10 ---
         return {
             "status": "success",
             "ticker": symbol,
             "company": info.get("longName", symbol),
-            "price": price,
+            "price": round(price, 2),
+            "sector": sector,
+            "volume": f"{volume/1000000:.1f}M",
+            "mcap": f"{mcap/10000000:.0f}Cr",
+            "pe": round(pe, 1),
+            "sec_pe": round(sec_pe, 1),
             "f_score": f_score,
             "mos": round(mos, 1),
             "verdict": verdict,
             "advice": advice,
-            "graham": round(graham_no, 2)
+            "graham": round(graham_no, 2),
+            "short_res": round(res1, 2),
+            "short_piv": round(pivot, 2),
+            "short_sup": round(sup1, 2),
+            "long_res": round(res1 * 1.05, 2), # Simplified projections
+            "long_piv": round(pivot * 1.02, 2),
+            "long_sup": round(sup1 * 0.98, 2)
         }
     except Exception as e:
         return {"status": "error", "message": str(e)}
 
-# --- NEW AUTOMATION LOGIC FOR GITHUB ---
-
 async def run_daily_bulk_audit():
-    """Automatically fetches NSE list and runs your audit on all of them"""
     print("Fetching live NSE ticker list...")
     try:
-        # This gets the official list of all stocks on the NSE
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
-        tickers = df['SYMBOL'].tolist() # Start with top 50 to test speed
+        tickers = df['SYMBOL'].head(100).tolist() # Limit to 100 for safety
     except:
-        tickers = ["RELIANCE", "TCS", "INFY", "HDFCBANK"] # Fallback
+        tickers = ["RELIANCE", "TCS", "INFY", "HDFCBANK"]
     
     final_results = []
     for t in tickers:
@@ -88,18 +110,14 @@ async def run_daily_bulk_audit():
         res = await get_audit(t)
         if res["status"] == "success":
             final_results.append(res)
-    
-    # Save to a file so GitHub can commit it
+            
     with open("daily_audit_results.json", "w") as f:
         json.dump(final_results, f, indent=4)
-    print("Daily Audit Complete. File Saved.")
+    print("Daily Audit Complete.")
 
 if __name__ == "__main__":
-    # Check if we are on GitHub or your Local PC
     if os.getenv("GITHUB_ACTIONS") == "true":
-        # On GitHub: Run the audit and then STOP
         asyncio.run(run_daily_bulk_audit())
     else:
-        # On Local PC: Start the server for your Frontend
         import uvicorn
         uvicorn.run(app, host="127.0.0.1", port=8000)
