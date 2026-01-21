@@ -92,43 +92,33 @@ async def get_audit(ticker: str):
         return {"status": "error", "message": str(e)}
 
 async def run_daily_bulk_audit():
-    print("Fetching live NSE ticker list...")
+    print("🚀 Starting High-Speed Audit...")
     try:
         url = "https://archives.nseindia.com/content/equities/EQUITY_L.csv"
         df = pd.read_csv(url)
-        # Sort so RELIANCE and others are consistently placed
         tickers = sorted(df['SYMBOL'].dropna().unique().tolist())
     except:
-        tickers = ["RELIANCE", "TCS", "INFY"]
+        tickers = ["RELIANCE", "TCS"]
 
     final_results = []
     
+    # Run at full speed
     for i, t in enumerate(tickers):
         try:
             res = await get_audit(t)
             if res["status"] == "success":
                 final_results.append(res)
-                # Simple log to track progress in GitHub Actions
-                if i % 50 == 0:
-                    print(f"Progress: {i}/{len(tickers)} stocks audited...")
             
-            # Tiny delay to prevent Yahoo Finance from blocking the IP
-            if i % 20 == 0:
-                time.sleep(1)
+            if i % 100 == 0:
+                print(f"✅ Processed {i}/{len(tickers)}...")
+        except:
+            continue # Skip errors and keep moving fast
 
-        except Exception as e:
-            print(f"Error on {t}: {e}")
-            continue
-
-    # --- THE FINAL SAVE ---
-    # Saving at the end ensures Git doesn't see "uncommitted changes" during the loop
-    filename = "daily_audit_results.json"
-    with open(filename, "w") as f:
-        # indent=2 makes it readable (not one giant line) 
-        # but compact (not 50,000 lines)
+    # Final Save only
+    with open("daily_audit_results.json", "w") as f:
         json.dump(final_results, f, indent=2)
     
-    print(f"Audit complete. Saved {len(final_results)} stocks to {filename}")
+    print(f"🏁 Done! Saved {len(final_results)} stocks.")
 
 if __name__ == "__main__":
     if os.getenv("GITHUB_ACTIONS") == "true":
