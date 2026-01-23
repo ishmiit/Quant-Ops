@@ -48926,5 +48926,27 @@
     "long_res": 498.91,
     "long_piv": 451.5,
     "long_sup": 390.53
+  },
+  {
+    "status": "success",
+    "ticker": "VIYASH",
+    "company": "VIYASH",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.1M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 206.23,
+    "short_piv": 204.24,
+    "short_sup": 203.05,
+    "long_res": 216.54,
+    "long_piv": 208.32,
+    "long_sup": 198.99
   }
 ]
