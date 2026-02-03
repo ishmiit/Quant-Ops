@@ -49432,5 +49432,27 @@
     "long_res": 9.56,
     "long_piv": 9.0,
     "long_sup": 8.51
+  },
+  {
+    "status": "success",
+    "ticker": "CCAVENUE",
+    "company": "CCAVENUE",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "3.2M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 17.41,
+    "short_piv": 17.24,
+    "short_sup": 16.92,
+    "long_res": 18.28,
+    "long_piv": 17.58,
+    "long_sup": 16.58
   }
 ]
