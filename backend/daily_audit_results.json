@@ -49454,5 +49454,27 @@
     "long_res": 18.28,
     "long_piv": 17.58,
     "long_sup": 16.58
+  },
+  {
+    "status": "success",
+    "ticker": "ADVENTHTL",
+    "company": "Advent Hotels International Limited",
+    "price": 216.0,
+    "sector": "Consumer Cyclical",
+    "volume": "0.0M",
+    "mcap": "1165Cr",
+    "pe": 18.9,
+    "sec_pe": 20.8,
+    "f_score": 8,
+    "mos": 98.0,
+    "verdict": "PRIME VALUE",
+    "advice": "RARE BARGAIN: High safety & low price.",
+    "graham": 10585.08,
+    "short_res": 252.21,
+    "short_piv": 209.99,
+    "short_sup": 173.78,
+    "long_res": 264.82,
+    "long_piv": 214.19,
+    "long_sup": 170.3
   }
 ]
