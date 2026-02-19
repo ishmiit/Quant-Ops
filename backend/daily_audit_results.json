@@ -49718,5 +49718,27 @@
     "long_res": 53.38,
     "long_piv": 50.15,
     "long_sup": 44.92
+  },
+  {
+    "status": "success",
+    "ticker": "CEINSYS",
+    "company": "CEINSYS",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 1044.63,
+    "short_piv": 1026.47,
+    "short_sup": 1011.53,
+    "long_res": 1096.86,
+    "long_piv": 1047.0,
+    "long_sup": 991.3
   }
 ]
