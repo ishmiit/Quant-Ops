@@ -49784,5 +49784,27 @@
     "long_res": 30.18,
     "long_piv": 28.04,
     "long_sup": 24.49
+  },
+  {
+    "status": "success",
+    "ticker": "ONECAP-RE",
+    "company": "ONECAP-RE",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 0.78,
+    "short_piv": 0.78,
+    "short_sup": 0.78,
+    "long_res": 0.82,
+    "long_piv": 0.8,
+    "long_sup": 0.76
   }
 ]
