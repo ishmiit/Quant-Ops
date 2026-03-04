@@ -49982,5 +49982,27 @@
     "long_res": 74.51,
     "long_piv": 69.85,
     "long_sup": 65.63
+  },
+  {
+    "status": "success",
+    "ticker": "PNGSREVA",
+    "company": "PNGSREVA",
+    "price": 374.1,
+    "sector": "Consumer Cyclical",
+    "volume": "2.2M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 382.73,
+    "short_piv": 371.37,
+    "short_sup": 362.73,
+    "long_res": 401.87,
+    "long_piv": 378.79,
+    "long_sup": 355.48
   }
 ]
