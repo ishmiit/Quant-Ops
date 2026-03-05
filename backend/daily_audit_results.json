@@ -50004,5 +50004,27 @@
     "long_res": 401.87,
     "long_piv": 378.79,
     "long_sup": 355.48
+  },
+  {
+    "status": "success",
+    "ticker": "OMNI",
+    "company": "OMNI",
+    "price": 214.54,
+    "sector": "Unknown",
+    "volume": "4.9M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 225.49,
+    "short_piv": 213.75,
+    "short_sup": 202.79,
+    "long_res": 236.77,
+    "long_piv": 218.02,
+    "long_sup": 198.74
   }
 ]
