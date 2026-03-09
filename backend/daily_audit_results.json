@@ -50070,5 +50070,27 @@
     "long_res": 0.24,
     "long_piv": 0.21,
     "long_sup": 0.16
+  },
+  {
+    "status": "success",
+    "ticker": "INA",
+    "company": "INA",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.1M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 98.06,
+    "short_piv": 95.83,
+    "short_sup": 93.67,
+    "long_res": 102.96,
+    "long_piv": 97.75,
+    "long_sup": 91.8
   }
 ]
