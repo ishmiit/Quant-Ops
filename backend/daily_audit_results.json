@@ -50092,5 +50092,27 @@
     "long_res": 102.96,
     "long_piv": 97.75,
     "long_sup": 91.8
+  },
+  {
+    "status": "success",
+    "ticker": "VITAL",
+    "company": "VITAL",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "212Cr",
+    "pe": 75.6,
+    "sec_pe": 83.2,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 50.8,
+    "short_piv": 48.2,
+    "short_sup": 43.0,
+    "long_res": 53.34,
+    "long_piv": 49.16,
+    "long_sup": 42.14
   }
 ]
