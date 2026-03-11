@@ -50114,5 +50114,27 @@
     "long_res": 53.34,
     "long_piv": 49.16,
     "long_sup": 42.14
+  },
+  {
+    "status": "success",
+    "ticker": "KOTYARK",
+    "company": "KOTYARK",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "906Cr",
+    "pe": 341.7,
+    "sec_pe": 375.9,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 344.05,
+    "short_piv": 279.65,
+    "short_sup": 246.3,
+    "long_res": 361.25,
+    "long_piv": 285.24,
+    "long_sup": 241.37
   }
 ]
