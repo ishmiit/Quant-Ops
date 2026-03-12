@@ -50180,5 +50180,27 @@
     "long_res": 1675.0,
     "long_piv": 1578.62,
     "long_sup": 1452.2
+  },
+  {
+    "status": "success",
+    "ticker": "AEPL",
+    "company": "AEPL",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.1M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 18.98,
+    "short_piv": 17.97,
+    "short_sup": 16.96,
+    "long_res": 19.93,
+    "long_piv": 18.33,
+    "long_sup": 16.62
   }
 ]
