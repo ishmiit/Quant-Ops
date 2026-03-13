@@ -50202,5 +50202,27 @@
     "long_res": 19.93,
     "long_piv": 18.33,
     "long_sup": 16.62
+  },
+  {
+    "status": "success",
+    "ticker": "MARSONS",
+    "company": "MARSONS",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.3M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 150.59,
+    "short_piv": 143.79,
+    "short_sup": 135.59,
+    "long_res": 158.12,
+    "long_piv": 146.67,
+    "long_sup": 132.87
   }
 ]
