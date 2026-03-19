@@ -50224,5 +50224,27 @@
     "long_res": 158.12,
     "long_piv": 146.67,
     "long_sup": 132.87
+  },
+  {
+    "status": "success",
+    "ticker": "RSL",
+    "company": "RSL",
+    "price": 114.59,
+    "sector": "Basic Materials",
+    "volume": "8.9M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 7,
+    "mos": -100,
+    "verdict": "QUALITY_GROWTH",
+    "advice": "EXPENSIVE LEADER: Elite health.",
+    "graham": 0,
+    "short_res": 120.74,
+    "short_piv": 115.95,
+    "short_sup": 109.8,
+    "long_res": 126.78,
+    "long_piv": 118.27,
+    "long_sup": 107.6
   }
 ]
