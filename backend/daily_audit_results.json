@@ -50290,5 +50290,27 @@
     "long_res": 5.69,
     "long_piv": 5.53,
     "long_sup": 5.31
+  },
+  {
+    "status": "success",
+    "ticker": "INNOVISION",
+    "company": "INNOVISION",
+    "price": 391.7,
+    "sector": "Industrials",
+    "volume": "6.7M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 5,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 448.35,
+    "short_piv": 413.35,
+    "short_sup": 356.7,
+    "long_res": 470.77,
+    "long_piv": 421.62,
+    "long_sup": 349.57
   }
 ]
