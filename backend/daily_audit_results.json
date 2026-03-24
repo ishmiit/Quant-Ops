@@ -50312,5 +50312,27 @@
     "long_res": 470.77,
     "long_piv": 421.62,
     "long_sup": 349.57
+  },
+  {
+    "status": "success",
+    "ticker": "GSPCROP",
+    "company": "GSPCROP",
+    "price": 332.55,
+    "sector": "Basic Materials",
+    "volume": "7.2M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 5,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 354.37,
+    "short_piv": 341.18,
+    "short_sup": 319.37,
+    "long_res": 372.08,
+    "long_piv": 348.01,
+    "long_sup": 312.98
   }
 ]
