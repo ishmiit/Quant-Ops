@@ -50554,5 +50554,27 @@
     "long_res": 431.51,
     "long_piv": 413.59,
     "long_sup": 388.15
+  },
+  {
+    "status": "success",
+    "ticker": "MAHAPE-RE",
+    "company": "MAHAPE-RE",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.1M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 40.91,
+    "short_piv": 33.36,
+    "short_sup": 24.01,
+    "long_res": 42.96,
+    "long_piv": 34.02,
+    "long_sup": 23.53
   }
 ]
