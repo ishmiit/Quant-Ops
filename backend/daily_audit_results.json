@@ -50576,5 +50576,27 @@
     "long_res": 42.96,
     "long_piv": 34.02,
     "long_sup": 23.53
+  },
+  {
+    "status": "success",
+    "ticker": "NIMBSPROJ",
+    "company": "NIMBSPROJ",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.1M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 201.02,
+    "short_piv": 197.01,
+    "short_sup": 195.0,
+    "long_res": 211.07,
+    "long_piv": 200.95,
+    "long_sup": 191.1
   }
 ]
