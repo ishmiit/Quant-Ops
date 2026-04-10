@@ -50598,5 +50598,27 @@
     "long_res": 211.07,
     "long_piv": 200.95,
     "long_sup": 191.1
+  },
+  {
+    "status": "success",
+    "ticker": "SAHLIBHFI",
+    "company": "SAHLIBHFI",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 85.9,
+    "short_piv": 84.7,
+    "short_sup": 83.8,
+    "long_res": 90.19,
+    "long_piv": 86.39,
+    "long_sup": 82.12
   }
 ]
