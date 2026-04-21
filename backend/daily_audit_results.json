@@ -52930,5 +52930,27 @@
     "long_res": 135.76,
     "long_piv": 131.58,
     "long_sup": 126.27
+  },
+  {
+    "status": "success",
+    "ticker": "SONAL",
+    "company": "SONAL",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 99.8,
+    "short_piv": 99.8,
+    "short_sup": 99.8,
+    "long_res": 104.79,
+    "long_piv": 101.8,
+    "long_sup": 97.8
   }
 ]
