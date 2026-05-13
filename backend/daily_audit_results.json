@@ -53062,5 +53062,27 @@
     "long_res": 229.08,
     "long_piv": 208.17,
     "long_sup": 192.0
+  },
+  {
+    "status": "success",
+    "ticker": "EFCIL-RE",
+    "company": "EFCIL-RE",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.1M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 22.02,
+    "short_piv": 20.03,
+    "short_sup": 16.05,
+    "long_res": 23.12,
+    "long_piv": 20.43,
+    "long_sup": 15.73
   }
 ]
