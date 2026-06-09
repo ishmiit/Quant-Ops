@@ -53194,5 +53194,27 @@
     "long_res": 38.45,
     "long_piv": 37.1,
     "long_sup": 35.17
+  },
+  {
+    "status": "success",
+    "ticker": "CINEVISTA",
+    "company": "Cinevista Limited",
+    "price": 16.23,
+    "sector": "Communication Services",
+    "volume": "0.0M",
+    "mcap": "93Cr",
+    "pe": 15.3,
+    "sec_pe": 16.8,
+    "f_score": 8,
+    "mos": -12.1,
+    "verdict": "QUALITY_GROWTH",
+    "advice": "EXPENSIVE LEADER: Elite health.",
+    "graham": 14.48,
+    "short_res": 17.25,
+    "short_piv": 15.82,
+    "short_sup": 14.81,
+    "long_res": 18.11,
+    "long_piv": 16.14,
+    "long_sup": 14.51
   }
 ]
