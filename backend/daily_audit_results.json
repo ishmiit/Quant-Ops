@@ -53216,5 +53216,27 @@
     "long_res": 18.11,
     "long_piv": 16.14,
     "long_sup": 14.51
+  },
+  {
+    "status": "success",
+    "ticker": "CMRGREEN",
+    "company": "CMRGREEN",
+    "price": 192.0,
+    "sector": "Basic Materials",
+    "volume": "6.2M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 3,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 217.33,
+    "short_piv": 242.67,
+    "short_sup": 217.33,
+    "long_res": 228.2,
+    "long_piv": 247.52,
+    "long_sup": 212.99
   }
 ]
