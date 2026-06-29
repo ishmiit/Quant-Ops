@@ -53458,5 +53458,27 @@
     "long_res": 10.64,
     "long_piv": 9.45,
     "long_sup": 7.37
+  },
+  {
+    "status": "success",
+    "ticker": "TURTLEMINT",
+    "company": "TURTLEMINT",
+    "price": 137.16,
+    "sector": "Financial Services",
+    "volume": "4.7M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 4,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 141.9,
+    "short_piv": 136.95,
+    "short_sup": 132.21,
+    "long_res": 149.0,
+    "long_piv": 139.69,
+    "long_sup": 129.57
   }
 ]
