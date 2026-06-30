@@ -53480,5 +53480,27 @@
     "long_res": 149.0,
     "long_piv": 139.69,
     "long_sup": 129.57
+  },
+  {
+    "status": "success",
+    "ticker": "VOEPL",
+    "company": "VOEPL",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 10.0,
+    "short_piv": 10.0,
+    "short_sup": 10.0,
+    "long_res": 10.5,
+    "long_piv": 10.2,
+    "long_sup": 9.8
   }
 ]
