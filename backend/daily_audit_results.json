@@ -53568,5 +53568,27 @@
     "long_res": 216.16,
     "long_piv": 175.37,
     "long_sup": 151.87
+  },
+  {
+    "status": "success",
+    "ticker": "CSM",
+    "company": "CSM",
+    "price": 113.0,
+    "sector": "Technology",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 113.0,
+    "short_piv": 113.0,
+    "short_sup": 113.0,
+    "long_res": 118.65,
+    "long_piv": 115.26,
+    "long_sup": 110.74
   }
 ]
