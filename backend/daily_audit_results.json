@@ -53612,5 +53612,27 @@
     "long_res": 22.71,
     "long_piv": 21.69,
     "long_sup": 20.12
+  },
+  {
+    "status": "success",
+    "ticker": "AASTHA",
+    "company": "AASTHA",
+    "price": 136.0,
+    "sector": "Consumer Cyclical",
+    "volume": "6.8M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 4,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 134.0,
+    "short_piv": 132.0,
+    "short_sup": 134.0,
+    "long_res": 140.7,
+    "long_piv": 134.64,
+    "long_sup": 131.32
   }
 ]
