@@ -53634,5 +53634,27 @@
     "long_res": 140.7,
     "long_piv": 134.64,
     "long_sup": 131.32
+  },
+  {
+    "status": "success",
+    "ticker": "KNACK",
+    "company": "KNACK",
+    "price": 182.98,
+    "sector": "Consumer Cyclical",
+    "volume": "33.5M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 189.88,
+    "short_piv": 185.1,
+    "short_sup": 178.21,
+    "long_res": 199.37,
+    "long_piv": 188.81,
+    "long_sup": 174.64
   }
 ]
