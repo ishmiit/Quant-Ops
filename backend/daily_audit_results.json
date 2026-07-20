@@ -53788,5 +53788,27 @@
     "long_res": 177.73,
     "long_piv": 170.48,
     "long_sup": 160.49
+  },
+  {
+    "status": "success",
+    "ticker": "AEROPLANE",
+    "company": "AEROPLANE",
+    "price": 193.07,
+    "sector": "",
+    "volume": "1.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 5,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 203.8,
+    "short_piv": 183.63,
+    "short_sup": 172.91,
+    "long_res": 213.99,
+    "long_piv": 187.31,
+    "long_sup": 169.45
   }
 ]
