@@ -53876,5 +53876,27 @@
     "long_res": 75.73,
     "long_piv": 72.59,
     "long_sup": 69.02
+  },
+  {
+    "status": "success",
+    "ticker": "CMLL",
+    "company": "CMLL",
+    "price": 484.0,
+    "sector": "Energy",
+    "volume": "13.7M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 5,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 507.98,
+    "short_piv": 485.67,
+    "short_sup": 461.33,
+    "long_res": 533.38,
+    "long_piv": 495.38,
+    "long_sup": 452.11
   }
 ]
