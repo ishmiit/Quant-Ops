@@ -53898,5 +53898,27 @@
     "long_res": 533.38,
     "long_piv": 495.38,
     "long_sup": 452.11
+  },
+  {
+    "status": "success",
+    "ticker": "ASHIKAG",
+    "company": "ASHIKAG",
+    "price": 412.0,
+    "sector": "",
+    "volume": "0.2M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 5,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 427.7,
+    "short_piv": 396.8,
+    "short_sup": 381.1,
+    "long_res": 449.09,
+    "long_piv": 404.74,
+    "long_sup": 373.48
   }
 ]
