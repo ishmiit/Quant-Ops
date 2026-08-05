@@ -54008,5 +54008,27 @@
     "long_res": 14.23,
     "long_piv": 13.82,
     "long_sup": 13.28
+  },
+  {
+    "status": "success",
+    "ticker": "MANIPALHOS",
+    "company": "MANIPALHOS",
+    "price": 651.8,
+    "sector": "Healthcare",
+    "volume": "34.5M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 664.2,
+    "short_piv": 649.6,
+    "short_sup": 637.2,
+    "long_res": 697.41,
+    "long_piv": 662.59,
+    "long_sup": 624.46
   }
 ]
