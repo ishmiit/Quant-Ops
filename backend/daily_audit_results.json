@@ -54140,5 +54140,27 @@
     "long_res": 400.26,
     "long_piv": 358.63,
     "long_sup": 323.6
+  },
+  {
+    "status": "success",
+    "ticker": "ARDEE",
+    "company": "ARDEE",
+    "price": 66.86,
+    "sector": "Industrials",
+    "volume": "90.1M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 71.43,
+    "short_piv": 68.62,
+    "short_sup": 64.04,
+    "long_res": 75.01,
+    "long_piv": 69.99,
+    "long_sup": 62.76
   }
 ]
