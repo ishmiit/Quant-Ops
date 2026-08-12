@@ -54118,5 +54118,27 @@
     "long_res": 34.65,
     "long_piv": 33.66,
     "long_sup": 32.34
+  },
+  {
+    "status": "success",
+    "ticker": "SWARAJ",
+    "company": "SWARAJ",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "632Cr",
+    "pe": 12.3,
+    "sec_pe": 13.5,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 381.2,
+    "short_piv": 351.6,
+    "short_sup": 330.2,
+    "long_res": 400.26,
+    "long_piv": 358.63,
+    "long_sup": 323.6
   }
 ]
