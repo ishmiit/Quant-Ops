@@ -57440,5 +57440,27 @@
     "long_res": 528.25,
     "long_piv": 509.18,
     "long_sup": 481.57
+  },
+  {
+    "status": "success",
+    "ticker": "YOGI",
+    "company": "YOGI",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 168.21,
+    "short_piv": 161.61,
+    "short_sup": 149.21,
+    "long_res": 176.62,
+    "long_piv": 164.84,
+    "long_sup": 146.23
   }
 ]
