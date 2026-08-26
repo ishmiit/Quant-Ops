@@ -57638,5 +57638,27 @@
     "long_res": 414.08,
     "long_piv": 392.78,
     "long_sup": 366.78
+  },
+  {
+    "status": "success",
+    "ticker": "GAJA",
+    "company": "GAJA",
+    "price": 175.15,
+    "sector": "Financial Services",
+    "volume": "33.4M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 186.15,
+    "short_piv": 180.65,
+    "short_sup": 169.65,
+    "long_res": 195.46,
+    "long_piv": 184.26,
+    "long_sup": 166.26
   }
 ]
