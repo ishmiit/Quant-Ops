@@ -57704,5 +57704,27 @@
     "long_res": 662.15,
     "long_piv": 602.7,
     "long_sup": 535.98
+  },
+  {
+    "status": "success",
+    "ticker": "AUGMONT",
+    "company": "AUGMONT",
+    "price": 938.5,
+    "sector": "Consumer Cyclical",
+    "volume": "10.8M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 4,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 996.33,
+    "short_piv": 961.67,
+    "short_sup": 903.53,
+    "long_res": 1046.15,
+    "long_piv": 980.9,
+    "long_sup": 885.46
   }
 ]
