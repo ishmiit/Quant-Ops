@@ -58078,5 +58078,27 @@
     "long_res": 250.95,
     "long_piv": 243.78,
     "long_sup": 234.22
+  },
+  {
+    "status": "success",
+    "ticker": "DOLLEX",
+    "company": "Dollex Agrotech Limited",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "148Cr",
+    "pe": 18.8,
+    "sec_pe": 20.7,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 41.93,
+    "short_piv": 36.12,
+    "short_sup": 32.28,
+    "long_res": 44.03,
+    "long_piv": 36.84,
+    "long_sup": 31.64
   }
 ]
