@@ -58122,5 +58122,27 @@
     "long_res": 17.3,
     "long_piv": 16.81,
     "long_sup": 16.15
+  },
+  {
+    "status": "success",
+    "ticker": "PRANAV",
+    "company": "PRANAV",
+    "price": 165.0,
+    "sector": "Real Estate",
+    "volume": "6.2M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 5,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 165.0,
+    "short_piv": 165.0,
+    "short_sup": 165.0,
+    "long_res": 173.25,
+    "long_piv": 168.3,
+    "long_sup": 161.7
   }
 ]
