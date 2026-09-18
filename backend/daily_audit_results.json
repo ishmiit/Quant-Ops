@@ -58342,5 +58342,27 @@
     "long_res": 99.22,
     "long_piv": 96.39,
     "long_sup": 92.61
+  },
+  {
+    "status": "success",
+    "ticker": "VEEGALAND",
+    "company": "VEEGALAND",
+    "price": 140.0,
+    "sector": "Real Estate",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 140.0,
+    "short_piv": 140.0,
+    "short_sup": 140.0,
+    "long_res": 147.0,
+    "long_piv": 142.8,
+    "long_sup": 137.2
   }
 ]
