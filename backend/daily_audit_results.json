@@ -58364,5 +58364,27 @@
     "long_res": 147.0,
     "long_piv": 142.8,
     "long_sup": 137.2
+  },
+  {
+    "status": "success",
+    "ticker": "MANIKA",
+    "company": "MANIKA",
+    "price": 43.0,
+    "sector": "Consumer Cyclical",
+    "volume": "4.8M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 8,
+    "mos": -100,
+    "verdict": "QUALITY_GROWTH",
+    "advice": "EXPENSIVE LEADER: Elite health.",
+    "graham": 0,
+    "short_res": 43.0,
+    "short_piv": 43.0,
+    "short_sup": 43.0,
+    "long_res": 45.15,
+    "long_piv": 43.86,
+    "long_sup": 42.14
   }
 ]
