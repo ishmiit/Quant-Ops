@@ -58386,5 +58386,27 @@
     "long_res": 45.15,
     "long_piv": 43.86,
     "long_sup": 42.14
+  },
+  {
+    "status": "success",
+    "ticker": "HEGAM",
+    "company": "HEGAM",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.3M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 247.33,
+    "short_piv": 242.67,
+    "short_sup": 237.33,
+    "long_res": 259.7,
+    "long_piv": 247.52,
+    "long_sup": 232.59
   }
 ]
