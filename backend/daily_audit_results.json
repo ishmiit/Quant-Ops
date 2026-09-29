@@ -58562,5 +58562,27 @@
     "long_res": 76.04,
     "long_piv": 73.87,
     "long_sup": 70.97
+  },
+  {
+    "status": "success",
+    "ticker": "VARMORA",
+    "company": "Varmora Granito Limited",
+    "price": 152.19,
+    "sector": "Basic Materials",
+    "volume": "51.6M",
+    "mcap": "3440Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 161.27,
+    "short_piv": 154.69,
+    "short_sup": 145.6,
+    "long_res": 169.34,
+    "long_piv": 157.78,
+    "long_sup": 142.69
   }
 ]
