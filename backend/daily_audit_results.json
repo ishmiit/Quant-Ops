@@ -59024,5 +59024,27 @@
     "long_res": 50.05,
     "long_piv": 44.62,
     "long_sup": 40.95
+  },
+  {
+    "status": "success",
+    "ticker": "HDFIRE",
+    "company": "HDFIRE",
+    "price": 271.0,
+    "sector": "Industrials",
+    "volume": "5.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 292.33,
+    "short_piv": 313.67,
+    "short_sup": 292.33,
+    "long_res": 306.95,
+    "long_piv": 319.94,
+    "long_sup": 286.49
   }
 ]
