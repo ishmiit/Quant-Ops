@@ -59486,5 +59486,27 @@
     "long_res": 472.26,
     "long_piv": 410.48,
     "long_sup": 371.19
+  },
+  {
+    "status": "success",
+    "ticker": "MELSTAR",
+    "company": "Melstar Information Technologies Limited",
+    "price": 4.25,
+    "sector": "Financial Services",
+    "volume": "0.0M",
+    "mcap": "1Cr",
+    "pe": 0.0,
+    "sec_pe": 0.0,
+    "f_score": 6,
+    "mos": 98.9,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 403.46,
+    "short_res": 4.25,
+    "short_piv": 4.25,
+    "short_sup": 4.25,
+    "long_res": 4.46,
+    "long_piv": 4.34,
+    "long_sup": 4.16
   }
 ]
