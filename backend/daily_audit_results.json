@@ -59596,5 +59596,27 @@
     "long_res": 179.34,
     "long_piv": 169.73,
     "long_sup": 154.64
+  },
+  {
+    "status": "success",
+    "ticker": "BAHETI",
+    "company": "Baheti Recycling Industries Limited",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "297Cr",
+    "pe": 10.9,
+    "sec_pe": 12.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 835.87,
+    "short_piv": 757.93,
+    "short_sup": 695.92,
+    "long_res": 877.66,
+    "long_piv": 773.09,
+    "long_sup": 682.0
   }
 ]
