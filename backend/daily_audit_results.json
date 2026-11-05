@@ -59618,5 +59618,27 @@
     "long_res": 877.66,
     "long_piv": 773.09,
     "long_sup": 682.0
+  },
+  {
+    "status": "success",
+    "ticker": "BCSSL",
+    "company": "Bombay Coated and Special Steels Limited",
+    "price": 94.81,
+    "sector": "Industrials",
+    "volume": "7.9M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 5,
+    "mos": -100,
+    "verdict": "NEUTRAL HOLD",
+    "advice": "AVERAGE: No clear edge.",
+    "graham": 0,
+    "short_res": 96.57,
+    "short_piv": 93.79,
+    "short_sup": 92.02,
+    "long_res": 101.4,
+    "long_piv": 95.66,
+    "long_sup": 90.18
   }
 ]
