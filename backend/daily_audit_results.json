@@ -59706,5 +59706,27 @@
     "long_res": 132.02,
     "long_piv": 114.61,
     "long_sup": 99.7
+  },
+  {
+    "status": "success",
+    "ticker": "SUVID-RE",
+    "company": "SUVID-RE",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.6M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 0.33,
+    "short_piv": 0.33,
+    "short_sup": 0.33,
+    "long_res": 0.35,
+    "long_piv": 0.34,
+    "long_sup": 0.32
   }
 ]
