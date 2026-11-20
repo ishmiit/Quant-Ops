@@ -59772,5 +59772,27 @@
     "long_res": 448.28,
     "long_piv": 422.25,
     "long_sup": 398.79
+  },
+  {
+    "status": "success",
+    "ticker": "SHUKRAMED",
+    "company": "SHUKRAMED",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "1.7M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 84.19,
+    "short_piv": 82.24,
+    "short_sup": 81.09,
+    "long_res": 88.4,
+    "long_piv": 83.89,
+    "long_sup": 79.46
   }
 ]
