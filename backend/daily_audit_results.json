@@ -59794,5 +59794,27 @@
     "long_res": 88.4,
     "long_piv": 83.89,
     "long_sup": 79.46
+  },
+  {
+    "status": "success",
+    "ticker": "OLIL",
+    "company": "Oneclick Logistics India Limited",
+    "price": 0,
+    "sector": "Unknown",
+    "volume": "0.0M",
+    "mcap": "92Cr",
+    "pe": 24.2,
+    "sec_pe": 26.7,
+    "f_score": 1,
+    "mos": -100,
+    "verdict": "RISK TRAP",
+    "advice": "DANGER: Failing financials.",
+    "graham": 0,
+    "short_res": 403.23,
+    "short_piv": 356.67,
+    "short_sup": 331.33,
+    "long_res": 423.39,
+    "long_piv": 363.8,
+    "long_sup": 324.71
   }
 ]
