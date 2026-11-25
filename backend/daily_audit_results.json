@@ -59816,5 +59816,27 @@
     "long_res": 423.39,
     "long_piv": 363.8,
     "long_sup": 324.71
+  },
+  {
+    "status": "success",
+    "ticker": "MITSU",
+    "company": "Mitsu Chem Plast Limited",
+    "price": 216.88,
+    "sector": "Basic Materials",
+    "volume": "0.0M",
+    "mcap": "0Cr",
+    "pe": 0,
+    "sec_pe": 0.0,
+    "f_score": 8,
+    "mos": -100,
+    "verdict": "QUALITY_GROWTH",
+    "advice": "EXPENSIVE LEADER: Elite health.",
+    "graham": 0,
+    "short_res": 222.92,
+    "short_piv": 218.96,
+    "short_sup": 212.92,
+    "long_res": 234.07,
+    "long_piv": 223.34,
+    "long_sup": 208.66
   }
 ]
